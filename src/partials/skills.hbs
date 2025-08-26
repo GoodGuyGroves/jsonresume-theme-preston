@@ -1,0 +1,57 @@
+{{#if resume.skills}}
+{{#if resume.skills.length}}
+<section class="content-section">
+  <div class="section-header">
+    <h2 class="section-title">Professional Skills</h2>
+    <div class="section-line"></div>
+  </div>
+  
+  {{#each resume.skills}}
+  <div class="skills-category">
+    {{#if name}}
+    <h3>{{name}}</h3>
+    {{/if}}
+    
+    {{#if keywords}}
+    <div class="skills-list">
+      {{#if (eq name "Technical Skills")}}
+      <ul class="skills-sublist">
+        {{#each keywords}}
+        <li>{{this}}</li>
+        {{/each}}
+      </ul>
+      {{else}}
+      {{join keywords ", "}}
+      {{/if}}
+    </div>
+    {{/if}}
+  </div>
+  {{/each}}
+</section>
+{{/if}}
+{{/if}}
+
+{{#if resume.interests}}
+{{#if resume.interests.length}}
+<section class="content-section">
+  <div class="section-header">
+    <h2 class="section-title">Interests</h2>
+    <div class="section-line"></div>
+  </div>
+  
+  {{#each resume.interests}}
+  <div class="skills-category">
+    {{#if name}}
+    <h3>{{name}}</h3>
+    {{/if}}
+    
+    {{#if keywords}}
+    <div class="skills-list">
+      {{join keywords ", "}}
+    </div>
+    {{/if}}
+  </div>
+  {{/each}}
+</section>
+{{/if}}
+{{/if}}

@@ -1,1 +1,3 @@
 .npm-global
+.direnv/
+node_modules/

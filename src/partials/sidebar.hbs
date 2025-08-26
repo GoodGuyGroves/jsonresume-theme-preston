@@ -1,0 +1,51 @@
+{{#if resume.basics}}
+<div class="sidebar-content">
+  {{#if resume.basics.name}}
+  <h1>{{resume.basics.name}}</h1>
+  {{/if}}
+  
+  {{#if resume.basics.label}}
+  <div class="tagline">{{resume.basics.label}}</div>
+  {{/if}}
+  
+  <div class="section-divider"></div>
+  
+  <div class="contact-info">
+    <h2>{{resume.basics.name}}</h2>
+    
+    {{#if resume.basics.location}}
+    {{#with resume.basics.location}}
+    <div class="contact-item">
+      {{#if address}}{{address}},{{/if}}
+      {{#if postalCode}}{{postalCode}}{{#if city}}, {{/if}}{{/if}}
+      {{#if city}}{{city}},{{/if}}
+      {{#if region}}{{region}},{{/if}}
+      {{#if countryCode}}{{countryCode}}{{/if}}
+    </div>
+    {{/with}}
+    {{/if}}
+    
+    {{#if resume.basics.phone}}
+    <div class="contact-item">{{resume.basics.phone}}</div>
+    {{/if}}
+    
+    {{#if resume.basics.email}}
+    <div class="contact-item">
+      <a href="mailto:{{resume.basics.email}}">{{resume.basics.email}}</a>
+    </div>
+    {{/if}}
+    
+    {{#if resume.basics.url}}
+    <div class="contact-item">
+      <a href="{{resume.basics.url}}">{{removeProtocol resume.basics.url}}</a>
+    </div>
+    {{/if}}
+    
+    {{#each resume.basics.profiles}}
+    <div class="contact-item">
+      <a href="{{url}}">{{removeProtocol url}}</a>
+    </div>
+    {{/each}}
+  </div>
+</div>
+{{/if}}

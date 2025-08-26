@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+  <title>{{resume.basics.name}} - Resume</title>
+  <style>{{{style}}}</style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Sidebar -->
+    <aside class="sidebar">
+      {{> sidebar}}
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="content">
+      {{> introduction}}
+      {{> experience}}
+      {{> education}}
+      {{> skills}}
+    </main>
+  </div>
+</body>
+</html>
