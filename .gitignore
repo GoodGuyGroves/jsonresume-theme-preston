@@ -1,3 +1,5 @@
 .npm-global
 .direnv/
 node_modules/
+resume.html
+resume.pdf

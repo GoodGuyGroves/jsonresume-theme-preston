@@ -1,12 +1,6 @@
 {{#if resume.education}}
 {{#if resume.education.length}}
-<section class="content-section">
-  <div class="section-header">
-    <h2 class="section-title">Education and Qualifications</h2>
-    <div class="section-line"></div>
-  </div>
-  
-  {{#each resume.education}}
+{{#each resume.education}}
   <div class="education-item">
     {{#if institution}}
     <div class="school-name">{{institution}}</div>
@@ -28,20 +22,19 @@
     <div class="grade">Grade: {{score}}</div>
     {{/if}}
   </div>
-  {{/each}}
-  
-  {{#if resume.certificates}}
-  {{#if resume.certificates.length}}
-  <div class="qualifications">
-    <h3>Professional Qualifications</h3>
-    <ul class="qualification-list">
-      {{#each resume.certificates}}
-      <li>{{name}}{{#if issuer}} - {{issuer}}{{/if}}</li>
-      {{/each}}
-    </ul>
-  </div>
-  {{/if}}
-  {{/if}}
-</section>
+{{/each}}
+
+{{#if resume.certificates}}
+{{#if resume.certificates.length}}
+<div class="qualifications">
+  <h3>Professional Qualifications</h3>
+  <ul class="qualification-list">
+    {{#each resume.certificates}}
+    <li>{{name}}{{#if issuer}} - {{issuer}}{{/if}}</li>
+    {{/each}}
+  </ul>
+</div>
+{{/if}}
+{{/if}}
 {{/if}}
 {{/if}}

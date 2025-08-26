@@ -1,30 +1,22 @@
 {{#if resume.work}}
 {{#if resume.work.length}}
-<section class="content-section">
-  <div class="section-header">
-    <h2 class="section-title">Experience</h2>
-    <div class="section-line"></div>
-  </div>
-  
-  {{#each resume.work}}
+{{#each resume.work}}
   <div class="experience-item">
-    <div class="job-header">
-      {{#if name}}
-      <div class="company-name">{{name}}</div>
-      {{/if}}
-      
-      {{#if position}}
-      <div class="job-title">{{position}}</div>
-      {{/if}}
-      
-      <div class="job-period">
-        {{formatDate startDate}} - {{formatDate endDate}}
-      </div>
-      
-      {{#if location}}
-      <div class="job-location">{{location}}</div>
-      {{/if}}
+    {{#if name}}
+    <div class="company-name">{{name}}</div>
+    {{/if}}
+    
+    {{#if position}}
+    <div class="job-title">{{position}}</div>
+    {{/if}}
+    
+    <div class="job-period">
+      {{formatDate startDate}} - {{formatDate endDate}}
     </div>
+    
+    {{#if location}}
+    <div class="job-location">{{location}}</div>
+    {{/if}}
     
     {{#if summary}}
     <div class="job-description">
@@ -42,7 +34,6 @@
     </div>
     {{/if}}
   </div>
-  {{/each}}
-</section>
+{{/each}}
 {{/if}}
 {{/if}}

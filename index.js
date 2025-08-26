@@ -8,6 +8,7 @@ function registerPartials() {
   const partialsDir = path.join(__dirname, 'src', 'partials');
   const partialFiles = [
     'sidebar',
+    'header',
     'introduction',
     'experience', 
     'education',
@@ -85,6 +86,18 @@ handlebars.registerHelper({
       'Expert': '★★★★★'
     };
     return levels[level] || level;
+  },
+
+  groupBy: function(array, key) {
+    if (!Array.isArray(array)) return [];
+    return array.reduce((groups, item) => {
+      const groupKey = item[key] || 'Other';
+      if (!groups[groupKey]) {
+        groups[groupKey] = [];
+      }
+      groups[groupKey].push(item);
+      return groups;
+    }, {});
   }
 });
 

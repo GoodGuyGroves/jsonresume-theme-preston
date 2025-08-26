@@ -10,33 +10,42 @@
 html {
   font-size: 14px;
   line-height: 1.4;
+  background: #1a1a1a;
+  min-height: 100%;
 }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-  color: #333;
-  background: #fff;
+  color: #fff;
+  background: #1a1a1a;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 /* Main Container */
 .container {
-  display: flex;
   min-height: 100vh;
-  max-width: 210mm;
+  max-width: 180mm;
   margin: 0 auto;
-  background: #fff;
+  background: #1a1a1a;
+  padding: 40px 20px;
 }
 
-/* Sidebar Styles */
-.sidebar {
+/* Header Section */
+.content-header {
+  display: flex;
+  background: #1a1a1a;
+}
+
+.header-sidebar {
   flex: 0 0 35%;
   background: #1a1a1a;
   color: #ffffff;
-  padding: 40px 30px;
-  position: relative;
+  padding: 40px 30px 20px 30px;
 }
 
-.sidebar h1 {
+.header-sidebar h1 {
   font-size: 2.8rem;
   font-weight: 300;
   line-height: 1.1;
@@ -44,87 +53,115 @@ body {
   letter-spacing: -0.02em;
 }
 
-.sidebar .tagline {
+.header-sidebar .tagline {
   font-size: 1.1rem;
   color: #4a90e2;
   font-weight: 400;
-  margin-bottom: 40px;
   line-height: 1.3;
 }
 
-.sidebar .contact-info {
-  margin-bottom: 40px;
+.header-content {
+  flex: 1;
+  padding: 40px 40px 20px 50px;
+  background: #1a1a1a;
+  position: relative;
 }
 
-.sidebar .contact-info h2 {
+.header-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ffffff;
+}
+
+
+/* Main Grid Layout */
+.main-grid {
+  display: grid;
+  grid-template-columns: 35% 65%;
+  min-height: calc(100vh - 200px);
+}
+
+.section-label-cell {
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 25px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  display: flex;
+  align-items: flex-start;
+  vertical-align: top;
+}
+
+.section-content-cell {
+  background: #1a1a1a;
+  padding: 25px 50px 25px 50px;
+  vertical-align: top;
+  position: relative;
+}
+
+.section-content-cell::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #ffffff;
+}
+
+.section-divider-cell {
+  background: #1a1a1a;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding: 15px 0;
+}
+
+.section-divider-content {
+  background: #1a1a1a;
+  padding: 15px 0;
+}
+
+/* Header Contact Styles */
+.header-contact h2 {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 15px;
   color: #ffffff;
 }
 
-.sidebar .contact-item {
+.header-contact .contact-item {
   margin-bottom: 8px;
   font-size: 0.95rem;
   line-height: 1.4;
+  color: #ffffff;
 }
 
-.sidebar .contact-item a {
+.header-contact .contact-item a {
   color: #4a90e2;
   text-decoration: none;
 }
 
-.sidebar .contact-item a:hover {
+.header-contact .contact-item a:hover {
   text-decoration: underline;
 }
 
-.sidebar .section-divider {
-  width: 100%;
-  height: 2px;
-  background: #ffffff;
-  margin: 30px 0;
-}
-
-/* Main Content Styles */
-.content {
-  flex: 1;
-  padding: 40px 40px 40px 50px;
-  background: #ffffff;
-}
-
 .content-section {
-  margin-bottom: 45px;
-}
-
-.content-section:last-child {
-  margin-bottom: 20px;
-}
-
-.section-header {
-  position: relative;
-  margin-bottom: 25px;
-}
-
-.section-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.section-line {
-  width: 100%;
-  height: 2px;
-  background: #1a1a1a;
+  margin: 0;
+  padding: 0;
 }
 
 /* Introduction Section */
 .introduction {
   font-size: 1rem;
   line-height: 1.6;
-  color: #333;
+  color: #ffffff;
   text-align: justify;
 }
 
@@ -138,51 +175,56 @@ body {
   margin-bottom: 0;
 }
 
-.job-header {
-  margin-bottom: 15px;
-}
-
 .company-name {
   font-size: 1.2rem;
   font-weight: 600;
   color: #4a90e2;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .job-title {
   font-size: 1.05rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #ffffff;
   margin-bottom: 3px;
 }
 
 .job-period {
   font-size: 0.95rem;
-  color: #666;
+  color: #ffffff;
   margin-bottom: 3px;
 }
 
 .job-location {
   font-size: 0.95rem;
-  color: #666;
+  color: #ffffff;
   font-style: italic;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .job-description {
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #333;
+  color: #ffffff;
 }
 
 .job-description ul {
-  margin: 10px 0 0 20px;
+  margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .job-description li {
   margin-bottom: 6px;
-  list-style-type: disc;
+  position: relative;
+  padding-left: 15px;
+}
+
+.job-description li:before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: #ffffff;
 }
 
 .job-description p {
@@ -208,26 +250,26 @@ body {
 .degree {
   font-size: 1rem;
   font-weight: 500;
-  color: #1a1a1a;
+  color: #ffffff;
   margin-bottom: 3px;
 }
 
 .education-period {
   font-size: 0.9rem;
-  color: #666;
+  color: #ffffff;
   margin-bottom: 3px;
 }
 
 .education-location {
   font-size: 0.9rem;
-  color: #666;
+  color: #ffffff;
   font-style: italic;
   margin-bottom: 8px;
 }
 
 .grade {
   font-size: 0.9rem;
-  color: #333;
+  color: #ffffff;
 }
 
 /* Qualifications */
@@ -250,7 +292,7 @@ body {
 
 .qualification-list li {
   font-size: 0.95rem;
-  color: #1a1a1a;
+  color: #ffffff;
   margin-bottom: 6px;
   padding-left: 15px;
   position: relative;
@@ -260,11 +302,44 @@ body {
   content: "━";
   position: absolute;
   left: 0;
-  color: #1a1a1a;
+  color: #ffffff;
   font-weight: bold;
 }
 
 /* Skills Section */
+.skills-narrative {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #ffffff;
+}
+
+.skills-narrative p {
+  margin-bottom: 12px;
+}
+
+.skills-technical-list,
+.skills-compliance-list {
+  margin: 8px 0 15px 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.skills-technical-list li,
+.skills-compliance-list li {
+  margin-bottom: 4px;
+  position: relative;
+  padding-left: 15px;
+  font-size: 0.9rem;
+}
+
+.skills-technical-list li:before,
+.skills-compliance-list li:before {
+  content: "-";
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+}
+
 .skills-category {
   margin-bottom: 25px;
 }
@@ -276,74 +351,67 @@ body {
 .skills-category h3 {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 8px;
 }
 
 .skills-list {
   font-size: 0.9rem;
   line-height: 1.5;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 12px;
-}
-
-.skills-sublist {
-  margin: 8px 0 0 20px;
-  padding: 0;
-  list-style: none;
-}
-
-.skills-sublist li {
-  margin-bottom: 4px;
-  position: relative;
-  padding-left: 15px;
-}
-
-.skills-sublist li:before {
-  content: "-";
-  position: absolute;
-  left: 0;
-  color: #666;
 }
 
 /* Print Styles */
 @media print {
+  * {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  
   html {
     font-size: 12px;
+    background: #1a1a1a !important;
+    min-height: 100% !important;
   }
   
   body {
-    -webkit-print-color-adjust: exact;
-    color-adjust: exact;
+    background: #1a1a1a !important;
+    min-height: 100vh !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   
   .container {
     max-width: none;
-    min-height: auto;
-    box-shadow: none;
-  }
-  
-  .sidebar {
+    min-height: 100vh !important;
     background: #1a1a1a !important;
-    color: #ffffff !important;
+    margin: 0 !important;
   }
   
-  .content {
-    padding: 30px 35px 30px 40px;
+  .main-grid {
+    background: #1a1a1a !important;
+    min-height: 100vh !important;
   }
   
-  .section-line {
+  .section-label-cell,
+  .section-content-cell,
+  .section-divider-cell,
+  .section-divider-content {
     background: #1a1a1a !important;
   }
   
-  .qualification-list li:before {
-    color: #1a1a1a !important;
+  .header-sidebar,
+  .header-content,
+  .content-header {
+    background: #1a1a1a !important;
   }
   
   .company-name,
   .school-name,
-  .sidebar .tagline,
-  .sidebar .contact-item a {
+  .header-sidebar .tagline,
+  .header-contact .contact-item a {
     color: #4a90e2 !important;
   }
 }

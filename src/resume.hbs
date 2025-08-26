@@ -8,18 +8,39 @@
 </head>
 <body>
   <div class="container">
-    <!-- Left Sidebar -->
-    <aside class="sidebar">
-      {{> sidebar}}
-    </aside>
+    <!-- Header with contact info spans full width -->
+    <div class="content-header">
+      <div class="header-sidebar">
+        {{#if resume.basics.name}}
+        <h1>{{resume.basics.name}}</h1>
+        {{/if}}
+        {{#if resume.basics.label}}
+        <div class="tagline">{{resume.basics.label}}</div>
+        {{/if}}
+      </div>
+      <div class="header-content">
+        {{> header}}
+      </div>
+    </div>
     
-    <!-- Main Content -->
-    <main class="content">
-      {{> introduction}}
-      {{> experience}}
-      {{> education}}
-      {{> skills}}
-    </main>
+    <!-- Grid layout for aligned sections -->
+    <div class="main-grid">
+      <!-- Introduction Row -->
+      <div class="section-label-cell">Introduction</div>
+      <div class="section-content-cell">{{> introduction}}</div>
+      
+      <!-- Experience Row -->
+      <div class="section-label-cell">Experience</div>
+      <div class="section-content-cell">{{> experience}}</div>
+      
+      <!-- Education Row -->
+      <div class="section-label-cell">Education and<br>Qualifications</div>
+      <div class="section-content-cell">{{> education}}</div>
+      
+      <!-- Skills Row -->
+      <div class="section-label-cell">Professional Skills</div>
+      <div class="section-content-cell">{{> skills}}</div>
+    </div>
   </div>
 </body>
 </html>
