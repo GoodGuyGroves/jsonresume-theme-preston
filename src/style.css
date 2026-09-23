@@ -364,6 +364,12 @@ body {
 
 /* Print Styles */
 @media print {
+  /* WeasyPrint's default page margin would leave a white border around the dark background */
+  @page {
+    margin: 0;
+    background: #1a1a1a;
+  }
+
   * {
     -webkit-print-color-adjust: exact !important;
     color-adjust: exact !important;
