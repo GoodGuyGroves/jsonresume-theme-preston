@@ -10,9 +10,11 @@
     <div class="degree">{{studyType}} {{area}}</div>
     {{/if}}{{/if}}
     
+    {{#if (or startDate endDate)}}
     <div class="education-period">
-      {{formatDate startDate}} - {{formatDate endDate}}
+      {{period startDate endDate}}
     </div>
+    {{/if}}
     
     {{#if location}}
     <div class="education-location">{{location}}</div>

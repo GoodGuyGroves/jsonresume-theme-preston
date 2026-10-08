@@ -1,36 +1,17 @@
 {{#if resume.skills}}
 {{#if resume.skills.length}}
-<div class="skills-narrative">
-    <p>- Subject matter expert for Information Security Management Systems (ISMS) and ISO 27001.</p>
-    <p>- Extensive experience coordinating global audit programmes for complex organisations.</p>
-    <p>- Able to coordinate large numbers of stakeholders in diverse geographies and time zones.</p>
-    <p>- Strong technical knowledge covering all aspects of information security, including</p>
-    <ul class="skills-technical-list">
-      <li>Risk management</li>
-      <li>Compliance</li>
-      <li>Security Awareness and Training</li>
-      <li>Asset Management</li>
-      <li>Software Development Security</li>
-      <li>Access Control</li>
-      <li>Incident Response</li>
-      <li>Cryptography</li>
-      <li>Network Security</li>
-      <li>Business Continuity and Disaster Recovery</li>
-    </ul>
-    <p>- Thoroughly understands the information security compliance landscape, including a detailed understanding of</p>
-    <ul class="skills-compliance-list">
-      <li>ISO/IEC 27001:2013 and Information Security Management Systems (ISMS)</li>
-      <li>ISO/IEC 27017:2015</li>
-      <li>ISO/IEC 27018:2019</li>
-      <li>ISO/IEC 27701:2019 and Privacy Information Management Systems (PIMS)</li>
-      <li>ISO 22301:2019 and Business Continuity Management Systems (BCMS)</li>
-      <li>CSA Star CCM</li>
-      <li>SOC1/2/3 Reporting</li>
-      <li>NEN 7510-1:2017</li>
-      <li>Hébergeurs de Données de Santé</li>
-      <li>GDPR</li>
-    </ul>
+{{#each resume.skills}}
+<div class="skills-category">
+  {{#if name}}
+  <h4>{{name}}{{#if level}} ({{level}}){{/if}}</h4>
+  {{/if}}
+  {{#if keywords}}
+  <div class="skills-list">
+    {{join keywords ", "}}
   </div>
+  {{/if}}
+</div>
+{{/each}}
 {{/if}}
 {{/if}}
 

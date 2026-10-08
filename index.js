@@ -30,14 +30,18 @@ function registerPartials() {
 
 // Register helpers
 handlebars.registerHelper({
-  formatDate: function(dateString) {
-    if (!dateString) return 'Present';
-    if (typeof dateString !== 'string') return 'Present';
-    
-    const date = moment(dateString);
-    return date.isValid() ? date.format('MMM YYYY') : dateString;
+  // A date range, or the one date there is; `ongoing` (work) reads a missing end as Present
+  period: function(start, end, ongoing) {
+    const format = (d) => {
+      const date = moment(d);
+      return date.isValid() ? date.format('MMM YYYY') : d;
+    };
+    if (!start && !end) return '';
+    if (!end) return ongoing === true ? `${format(start)} - Present` : format(start);
+    if (!start) return format(end);
+    return `${format(start)} - ${format(end)}`;
   },
-  
+
   removeProtocol: function(url) {
     if (!url || typeof url !== 'string') return '';
     return url.replace(/^https?:\/\//, '');

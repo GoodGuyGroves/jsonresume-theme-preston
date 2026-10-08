@@ -10,9 +10,11 @@
     <div class="job-title">{{position}}</div>
     {{/if}}
     
+    {{#if (or startDate endDate)}}
     <div class="job-period">
-      {{formatDate startDate}} - {{formatDate endDate}}
+      {{period startDate endDate true}}
     </div>
+    {{/if}}
     
     {{#if location}}
     <div class="job-location">{{location}}</div>
