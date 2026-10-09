@@ -175,6 +175,10 @@ body {
   margin-bottom: 0;
 }
 
+.job-role + .job-role {
+  margin-top: 20px;
+}
+
 .company-name {
   font-size: 1.2rem;
   font-weight: 600;

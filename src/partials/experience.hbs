@@ -1,11 +1,12 @@
 {{#if resume.work}}
 {{#if resume.work.length}}
-{{#each resume.work}}
+{{#each (groupWork resume.work)}}
   <div class="experience-item">
     {{#if name}}
     <div class="company-name">{{name}}</div>
     {{/if}}
-    
+    {{#each roles}}
+    <div class="job-role">
     {{#if position}}
     <div class="job-title">{{position}}</div>
     {{/if}}
@@ -35,6 +36,8 @@
       </ul>
     </div>
     {{/if}}
+    </div>
+    {{/each}}
   </div>
 {{/each}}
 {{/if}}

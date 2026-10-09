@@ -92,6 +92,16 @@ handlebars.registerHelper({
     return levels[level] || level;
   },
 
+  // Consecutive entries with the same company become one {name, roles}
+  groupWork: function(work) {
+    return work.reduce((groups, role) => {
+      const last = groups[groups.length - 1];
+      if (last && role.name && last.name === role.name) last.roles.push(role);
+      else groups.push({ name: role.name, roles: [role] });
+      return groups;
+    }, []);
+  },
+
   groupBy: function(array, key) {
     if (!Array.isArray(array)) return [];
     return array.reduce((groups, item) => {
